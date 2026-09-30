@@ -1,0 +1,339 @@
+======================================================================
+FILE: auto-grader.user.js
+name: Auto Grader | version: 1.2 | desc: Auto-fills grading score boxes, adds half-score/feedback button, collapses rubric sections
+matches: ["*://*/*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon"]
+CONSTS:
+   SETTLE_MS = 3000    // wait this long with no new score boxes before scrolling
+   ITEM_FEEDBACK_MESSAGE = "Great start! You’re doing well—please don’t give up. If you want to go over it together, I’m happy ...[177 chars] 
+   OVERALL_PASS_MSG = "Outstanding job on this assessment! You demonstrated a strong mastery of the concepts covered in th...[137 chars] 
+   OVERALL_FAIL_MSG = "Great effort! You are making good progress, but there are a few key concepts we should review toget...[269 chars] 
+======================================================================
+FILE: auto-log-st-section.user.js
+name: Auto Log ST & Section | version: 0.4.0 | desc: Automatically selects section and student based on page title after dynamic load.
+matches: ["https://www.connexus.com/log/logEntry*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon"]
+CONSTS:
+======================================================================
+FILE: bulk-delete-in-gb.user.js
+name: Bulk Delete in GB | version: 0.2 | desc: Mark multiple assignments for reset execute them sequentially after page reloads.
+matches: ["https://www.connexus.com/gradeBook/default*"]
+include-globs: []
+grants: ["GM_setValue","GM_getValue","GM_deleteValue","GM_registerMenuCommand"]
+connects: []
+require: []
+others: ["author"]
+CONSTS:
+   QUEUE_KEY = 'batchDeleteQueue' 
+   ACTIVE_KEY = 'batchDeleteActive' 
+======================================================================
+FILE: count-livelesson-log-entries-with-scott-zachary.user.js
+name: Count LiveLesson Log Entries with Scott, Zachary | version: 1.0 | desc: Counts how many times a student met with Scott, Zachary in a LiveLesson
+matches: ["https://www.connexus.com/log/*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: []
+CONSTS:
+======================================================================
+FILE: filter-science-courses.user.js
+name: Filter Science Courses | version: 2.5 | desc: Filter high school courses and Section/Location menu to show Physical Science S1 and Homer
+matches: ["https://www.connexus.com/*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+======================================================================
+FILE: gmail-pearson-code.user.js
+name: Gmail Pearson Code | version: 3.0 | desc: Extract newest Pearson verification code from inbox
+matches: ["https://mail.google.com/*"]
+include-globs: []
+grants: ["GM_setClipboard"]
+connects: []
+require: []
+others: ["icon"]
+CONSTS:
+======================================================================
+FILE: google-chat-block-sticker-promo-popup.user.js
+name: Google Chat - Block Sticker Promo Popup | version: 1.0 | desc: Blocks the "New look, more fun!" sticker promo popup in Google Chat
+matches: ["https://chat.google.com/*","https://mail.google.com/*"]
+include-globs: []
+grants: ["GM_addStyle"]
+connects: []
+require: []
+others: []
+CONSTS:
+======================================================================
+FILE: google-chat-email-collector.user.js
+name: Google Chat Email Collector | version: 1.0 | desc: Scrape email addresses from Google Chat messages and copy to clipboard
+matches: ["https://chat.google.com/*"]
+include-globs: []
+grants: ["GM_setClipboard","GM_getValue","GM_setValue"]
+connects: []
+require: []
+others: ["author"]
+CONSTS:
+   PRIMARY = '#722362' 
+   PRIMARY_DARK = '#651e56' 
+   ACCENT = '#76d5d4' 
+   ACCENT_DARK = '#5dc0be' 
+   EMAIL_REGEX = /[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g 
+======================================================================
+FILE: google-chat-font-size-adjuster.user.js
+name: Google Chat Font Size Adjuster | version: 1.2 | desc: Make all chat messages in the reading pane larger and uniform font size
+matches: ["https://*.google.com/*"]
+include-globs: []
+grants: ["GM_addStyle"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+======================================================================
+FILE: google-voice-auto-dialer.user.js
+name: Google Voice Auto Dialer | version: 5.0 | desc: Auto dialer for voice.google.com — persists list, logs outcomes + contact names
+matches: ["https://voice.google.com/*"]
+include-globs: []
+grants: ["GM_setValue","GM_getValue"]
+connects: []
+require: []
+others: ["author"]
+CONSTS:
+   DISPOSITIONS = ['Answered', 'No Answer', 'Voicemail', 'Busy', 'Wrong Number', 'Callback'] 
+======================================================================
+FILE: google-voice-pinned-tab-unread-badge.user.js
+name: Google Voice Pinned Tab Unread Badge | version: 2.1 | desc: Adds a reliable unread SMS/MMS count badge to pinned Google Voice tabs by updating the fav
+matches: ["https://voice.google.com/*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+   CHECK_INTERVAL = 1500 
+   BADGE_BG = '#d93025' 
+   BADGE_TEXT = '#ffffff' 
+======================================================================
+FILE: google-voice-search.user.js
+name: Google Voice > Search | version: 4.1 | desc: Adds a search (magnifying glass) icon next to phone numbers, opens/ reuses GV and triggers
+matches: ["*://*/*"]
+include-globs: []
+grants: ["GM_setValue","GM_getValue"]
+connects: []
+require: []
+others: ["icon"]
+CONSTS:
+======================================================================
+FILE: google-voice-suite.user.js
+name: Google Voice Suite | version: 2.2 | desc: Remove sidebar, thread tagger, and message tools for Google Voice
+matches: ["https://voice.google.com/u/*"]
+include-globs: []
+grants: ["GM_setClipboard","GM_getValue","GM_setValue"]
+connects: []
+require: []
+others: ["icon","updateURL","downloadURL","author"]
+CONSTS:
+   CURRENT_VERSION = '2.2' 
+   STORAGE_KEY = 'gv_thread_tags' 
+   EMOJIS = ['⁉️', '✏️', '📞', '⚠️', '📌'] 
+   TAG_BTN_CLASS = 'gv-tagger-btn' 
+   TAG_BADGE_CLASS = 'gv-tagger-badge' 
+   MENU_CLASS = 'gv-tagger-menu' 
+   KEYWORDS = ['absent', 'missing', 'late', 'help', 'sick', 'confused', 'question', 'problem'] 
+   COPY_IMG = `https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3E5cmk4bmI3NXE1azRvbjRoY3I3bXNvY3F3bG05YnAyc2h0M...[175 chars] 
+   ID_IMG = `https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTY3MTc2b3JlYmxnemc2MHA1MHg0azlsc3B0dGRyNTljZXYyM...[176 chars] 
+   UNREAD_IMG = `https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGdsYTJ3bXpjeGswYjZ4bmpjc29sNXpxdzh6aGc5ZG50emsxc...[175 chars] 
+======================================================================
+FILE: gradebook-grid-unit-lesson-labels.user.js
+name: Gradebook Grid Unit/Lesson Labels | version: 1.0 | desc: Extract "U# L#" from each column header's title, color-code by unit number, and display it
+matches: ["https://www.connexus.com/gradeBook/section/grid*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: []
+CONSTS:
+======================================================================
+FILE: highlight-words.user.js
+name: Highlight Words | version: 2.2 | desc: Highlight specific words with colors, make names pulse, and science class link explode.
+matches: ["*://*/*"]
+include-globs: []
+grants: ["GM_addStyle"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+   CASE_INSENSITIVE = true 
+   REGEX = buildRegex() 
+======================================================================
+FILE: horizontal-log-ui.user.js
+name: Horizontal Log UI | version: 12.0 | desc: Sets specific widths (400/200/300) and hides headers on the 2nd and 3rd boxes.
+matches: ["https://www.connexus.com/log*","https://www.connexus.com/log/*"]
+include-globs: []
+grants: ["GM_addStyle"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+======================================================================
+FILE: increase-wm-message-font-size.user.js
+name: Increase WM Message Font Size | version: 1.1 | desc: Increases the font size of message bodies.
+matches: ["https://www.connexus.com/webmail*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+======================================================================
+FILE: labster-auto-refresh-progress-auto-sort-gemini.user.js
+name: Labster Auto-Refresh & Progress Auto-Sort - Gemini | version: 1.0 | desc: Auto-refreshes Labster portal and keeps student roster sorted by progress.
+matches: ["https://*.labster.com/*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: []
+CONSTS:
+   REFRESH_INTERVAL_SECONDS = 30    // Time in seconds between reloads
+   SORT_DIRECTION = 'descending'    // 'descending' (highest % first) or 'ascending' (lowest % first)
+======================================================================
+FILE: labster-grades-auto-refresh-sort-by-progress-cla.user.js
+name: Labster Grades Auto-Refresh + Sort by Progress - Claud | version: 1.0 | desc: Reloads the Labster grades page on an interval and re-sorts by Progress (highest first).
+matches: ["https://*.labster.com/*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: []
+CONSTS:
+   REFRESH_SECONDS = 30    // change refresh interval here
+   KEY = 'labsterAutoRefreshOn'    // remembers on/off across reloads
+======================================================================
+FILE: log-buttons.user.js
+name: Log Buttons | version: 4.7 | desc: Adds buttons to the Logt
+matches: ["https://www.connexus.com/log*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: []
+CONSTS:
+   DATAVIEW_ID = 789 
+   EOY_DATAVIEW_ID = 3626 
+   SUT_DATAVIEW_ID = 22 
+   SAVE_TIMEOUT = 3000 
+======================================================================
+FILE: move-physical-science-to-top.user.js
+name: Move Physical Science to Top | version: 1.0 | desc: Moves the Physical Science section row to the top of the section summary table.
+matches: ["https://www.connexus.com/gradeBook*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: []
+CONSTS:
+======================================================================
+FILE: profile-info-on-wm-logs.user.js
+name: Profile Info on WM & Logs | version: 6.2 | desc: Displays student nickname, image, Special Pop tags, and RCA House Points (page scrape).
+matches: ["https://www.connexus.com/webmail*","https://www.connexus.com/log*"]
+include-globs: []
+grants: ["GM_xmlhttpRequest","GM_getValue","GM_setValue"]
+connects: ["connexus.com","app.rcahousepoints.com"]
+require: []
+others: ["icon","author"]
+CONSTS:
+   PROFILE_INFO_CONTAINER_ID = 'tampermonkey-profile-info-container' 
+   NICKNAME_DISPLAY_ID = 'tampermonkey-nickname-display' 
+   SPECIAL_POPS_DISPLAY_ID = 'tampermonkey-special-pops-display' 
+   HOUSE_POINTS_DISPLAY_ID = 'tampermonkey-house-points-display' 
+   IMAGE_DISPLAY_ID = 'tampermonkey-image-display' 
+   COLLAPSE_BUTTON_ID = 'tampermonkey-collapse-button' 
+   CACHE_DURATION_MS = 24 * 60 * 60 * 1000 
+   POINTS_CACHE_DURATION_MS = 2 * 60 * 1000 
+   SCRIPT_VERSION_TAG = '_v6.2_pageScrape' 
+======================================================================
+FILE: sections-students.user.js
+name: Sections & Students | version: 3.4 | desc: Open multiple student logs or RCA points tabs from selected checkboxes + ID bulk checker +
+matches: ["https://www.connexus.com/sectionsandstudents*"]
+include-globs: []
+grants: ["GM_xmlhttpRequest"]
+connects: ["connexus.com"]
+require: []
+others: ["icon"]
+CONSTS:
+   CONTACT_ALARM_KEYWORD = 'Contacts (Alarm)' 
+   PERFORMANCE_ALARM_KEYWORD = 'Performance (Alarm)' 
+   INTERNAL_SORT_VALUE = '🚨Alarm: Contact' 
+   VISIBLE_TEXT_DISPLAY = '🚨Alarm: Contact' 
+   DEFAULT_ALARM_TEXT = 'Alarm' 
+======================================================================
+FILE: st-id-menu-winter-theme-snow-snowflake-icons.user.js
+name: ST ID Menu (Winter Theme + Snow + Snowflake Icons) | version: 4.3 | desc: Winter-themed floating student menu with snow, tilt, open-all, keyboard shortcut, loading 
+matches: ["*://*/*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["author"]
+CONSTS:
+======================================================================
+FILE: webmail-contact-search.user.js
+name: WebMail Contact Search | version: 1.0 | desc: Search Webmail contacts
+matches: ["https://www.connexus.com/webmail*"]
+include-globs: []
+grants: ["GM_addStyle","GM_setValue","GM_getValue"]
+connects: []
+require: []
+others: ["icon","updateURL","downloadURL","author"]
+CONSTS:
+======================================================================
+FILE: webmail-delete-button-to-folder.user.js
+name: Webmail Delete Button to Folder | version: 1.1 | desc: Change delete button to move to trash instead of deleting
+matches: ["https://www.connexus.com/webmail*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon"]
+CONSTS:
+======================================================================
+FILE: webmail-gif-widget.user.js
+name: Webmail GIF Widget | version: 1.4.0 | desc: Displays a dynamic GIF widget in WM, hides behind search modal, forces 200px height on dro
+matches: ["https://www.connexus.com/webmail*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+======================================================================
+FILE: webmail-inbox-full-height.user.js
+name: Webmail Inbox - Full Height | version: 1.0 | desc: Attempts to make the Connexus webmail table fill available vertical space.
+matches: ["https://www.connexus.com/webmail*"]
+include-globs: []
+grants: ["GM_addStyle"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:
+======================================================================
+FILE: webmail-menu.user.js
+name: WebMail Menu | version: 1.5 | desc: Dynamically modify menu, add buttons
+matches: ["https://www.connexus.com/webmail*"]
+include-globs: []
+grants: ["none"]
+connects: []
+require: []
+others: ["icon","author"]
+CONSTS:

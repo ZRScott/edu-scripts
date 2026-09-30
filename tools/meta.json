@@ -1,0 +1,304 @@
+{
+  "title": "Byte-Sized Toolbox",
+  "subtitle": "Teacher Userscript Catalog & Customizer",
+  "scripts": [
+    {
+      "id": "move-physical-science-to-top",
+      "file": "move-physical-science-to-top.user.js",
+      "domain": "Connexus",
+      "description": "Moves the Physical Science row to the top of the sections summary table on the Gradebook landing page.",
+      "tags": ["Gradebook", "Sections", "Sorting"],
+      "customizations": []
+    },
+    {
+      "id": "count-livelesson-log-entries",
+      "file": "count-livelesson-log-entries-with-scott-zachary.user.js",
+      "domain": "Connexus",
+      "description": "Adds a floating button that counts how many times a student met with Scott, Zachary in LiveLesson log entries.",
+      "tags": ["Logs", "LiveLesson", "Counting"],
+      "customizations": []
+    },
+    {
+      "id": "log-buttons",
+      "file": "log-buttons.user.js",
+      "domain": "Connexus",
+      "description": "Adds quick-action buttons to the Log page for opening dataviews, with an auto-save guard.",
+      "tags": ["Logs", "Buttons", "Dataview"],
+      "customizations": [
+        { "key": "DATAVIEW_ID", "label": "Main dataview ID", "type": "number", "hint": "Dataview opened by the main button" },
+        { "key": "EOY_DATAVIEW_ID", "label": "End-of-Year dataview ID", "type": "number" },
+        { "key": "SUT_DATAVIEW_ID", "label": "SUT dataview ID", "type": "number" },
+        { "key": "SAVE_TIMEOUT", "label": "Save timeout (ms)", "type": "number", "hint": "How long to wait for the page save before navigating" }
+      ]
+    },
+    {
+      "id": "gv-unread-badge",
+      "file": "google-voice-pinned-tab-unread-badge.user.js",
+      "domain": "Google Voice",
+      "description": "Shows a reliable unread SMS/MMS count badge on pinned Google Voice tabs by updating the favicon.",
+      "tags": ["Tabs", "Badge", "Notifications"],
+      "customizations": [
+        { "key": "CHECK_INTERVAL", "label": "Check interval (ms)", "type": "number", "hint": "How often to re-count unread messages" },
+        { "key": "BADGE_BG", "label": "Badge background", "type": "color" },
+        { "key": "BADGE_TEXT", "label": "Badge text color", "type": "color" }
+      ]
+    },
+    {
+      "id": "filter-science-courses",
+      "file": "filter-science-courses.user.js",
+      "domain": "Connexus",
+      "description": "Filters the course and Section/Location dropdowns down to Physical Science courses and auto-selects one.",
+      "tags": ["Sections", "Course Filter", "Dropdown"],
+      "customizations": [
+        { "key": "scienceKeywords", "label": "Keywords to keep", "type": "list", "hint": "Comma-separated. Only courses containing these words are shown" },
+        { "key": "finishedText", "label": "Finished-course marker", "type": "text", "hint": "Courses whose title contains this text are hidden" },
+        { "key": "coursesToExclude", "label": "Courses to exclude", "type": "list" },
+        { "key": "courseToAutoSelect", "label": "Course to auto-select", "type": "text" },
+        { "key": "desiredOrder", "label": "Preferred course order", "type": "list", "hint": "Comma-separated course names, top to bottom" }
+      ]
+    },
+    {
+      "id": "gc-block-sticker-popup",
+      "file": "google-chat-block-sticker-promo-popup.user.js",
+      "domain": "Google Chat",
+      "description": "Hides the \u201cNew look, more fun!\u201d sticker promo popup in Google Chat and Gmail's Chat tab.",
+      "tags": ["Chat", "Cleanup", "Popups"],
+      "customizations": []
+    },
+    {
+      "id": "webmail-contact-search",
+      "file": "webmail-contact-search.user.js",
+      "domain": "Connexus",
+      "description": "Adds a searchable contact picker and universal directory filter to Connexus WebMail.",
+      "tags": ["WebMail", "Contacts", "Search"],
+      "customizations": []
+    },
+    {
+      "id": "google-voice-suite",
+      "file": "google-voice-suite.user.js",
+      "domain": "Google Voice",
+      "description": "All-in-one Google Voice toolkit: removes the sidebar, adds thread tagging with emoji, and message tools.",
+      "tags": ["Voice", "Sidebar", "Tagging", "Toolkit"],
+      "customizations": [
+        { "key": "EMOJIS", "label": "Tag emoji options", "type": "list", "hint": "Comma-separated emoji available in the tagger menu" },
+        { "key": "KEYWORDS", "label": "Keyword highlights", "type": "list", "hint": "Comma-separated words flagged in message previews" },
+        { "key": "STORAGE_KEY", "label": "Storage key", "type": "text", "hint": "GM storage key where thread tags are saved" }
+      ]
+    },
+    {
+      "id": "sections-students",
+      "file": "sections-students.user.js",
+      "domain": "Connexus",
+      "description": "Bulk-open student logs or RCA points tabs from selected checkboxes, plus an ID bulk checker with alarm sorting.",
+      "tags": ["Sections", "Students", "Bulk Actions", "ID Checker"],
+      "customizations": [
+        { "key": "CONTACT_ALARM_KEYWORD", "label": "Contact alarm keyword", "type": "text" },
+        { "key": "PERFORMANCE_ALARM_KEYWORD", "label": "Performance alarm keyword", "type": "text" },
+        { "key": "INTERNAL_SORT_VALUE", "label": "Internal sort value", "type": "text", "hint": "Value used to force alarms to the top when sorting" },
+        { "key": "VISIBLE_TEXT_DISPLAY", "label": "Visible alarm text", "type": "text" },
+        { "key": "DEFAULT_ALARM_TEXT", "label": "Default alarm text", "type": "text" }
+      ]
+    },
+    {
+      "id": "webmail-inbox-full-height",
+      "file": "webmail-inbox-full-height.user.js",
+      "domain": "Connexus",
+      "description": "Makes the Connexus WebMail inbox table fill the available vertical space.",
+      "tags": ["WebMail", "Layout"],
+      "customizations": []
+    },
+    {
+      "id": "gc-font-size",
+      "file": "google-chat-font-size-adjuster.user.js",
+      "domain": "Google Chat",
+      "description": "Makes all Google Chat messages in the reading pane larger with a uniform font size.",
+      "tags": ["Chat", "Font Size", "Readability"],
+      "customizations": []
+    },
+    {
+      "id": "gradebook-unit-labels",
+      "file": "gradebook-grid-unit-lesson-labels.user.js",
+      "domain": "Connexus",
+      "description": "Extracts \u201cU# L#\u201d labels from Gradebook grid column headers and color-codes them by unit number.",
+      "tags": ["Gradebook", "Labels", "Color Coding"],
+      "customizations": []
+    },
+    {
+      "id": "auto-log-st-section",
+      "file": "auto-log-st-section.user.js",
+      "domain": "Connexus",
+      "description": "Automatically selects the correct section and student on the Log Entry page after the dynamic content loads.",
+      "tags": ["Logs", "Automation", "Auto-Select"],
+      "customizations": []
+    },
+    {
+      "id": "gv-auto-dialer",
+      "file": "google-voice-auto-dialer.user.js",
+      "domain": "Google Voice",
+      "description": "Auto-dialer for Google Voice: persists a call list, logs outcomes and contact names.",
+      "tags": ["Voice", "Calling", "Automation"],
+      "customizations": [
+        { "key": "DISPOSITIONS", "label": "Call dispositions", "type": "list", "hint": "Comma-separated outcome options" }
+      ]
+    },
+    {
+      "id": "gc-email-collector",
+      "file": "google-chat-email-collector.user.js",
+      "domain": "Google Chat",
+      "description": "Scrapes email addresses from Google Chat messages and copies them to the clipboard.",
+      "tags": ["Chat", "Email", "Clipboard"],
+      "customizations": [
+        { "key": "PRIMARY", "label": "Primary color", "type": "color" },
+        { "key": "PRIMARY_DARK", "label": "Primary (dark)", "type": "color" },
+        { "key": "ACCENT", "label": "Accent color", "type": "color" },
+        { "key": "ACCENT_DARK", "label": "Accent (dark)", "type": "color" }
+      ]
+    },
+    {
+      "id": "bulk-delete-gb",
+      "file": "bulk-delete-in-gb.user.js",
+      "domain": "Connexus",
+      "description": "Mark multiple gradebook assignments for reset, then execute them one-by-one across page reloads.",
+      "tags": ["Gradebook", "Bulk Actions", "Reset"],
+      "customizations": [
+        { "key": "QUEUE_KEY", "label": "Queue storage key", "type": "text" },
+        { "key": "ACTIVE_KEY", "label": "Active-flag storage key", "type": "text" }
+      ]
+    },
+    {
+      "id": "st-id-menu",
+      "file": "st-id-menu-winter-theme-snow-snowflake-icons.user.js",
+      "domain": "Utilities",
+      "description": "Winter-themed floating student-ID menu with snow, 3D tilt, open-all, keyboard shortcut and loading states.",
+      "tags": ["Navigation", "Menu", "Winter", "Student IDs"],
+      "customizations": []
+    },
+    {
+      "id": "gv-search",
+      "file": "google-voice-search.user.js",
+      "domain": "Google Voice",
+      "description": "Adds a search icon next to any phone number and reuses Google Voice to look it up on click.",
+      "tags": ["Voice", "Search", "Phone Numbers"],
+      "customizations": []
+    },
+    {
+      "id": "gmail-pearson-code",
+      "file": "gmail-pearson-code.user.js",
+      "domain": "Gmail",
+      "description": "Extracts the newest Pearson verification code from the Gmail inbox and copies it to the clipboard.",
+      "tags": ["Gmail", "Verification Code", "Clipboard"],
+      "customizations": []
+    },
+    {
+      "id": "wm-font-size",
+      "file": "increase-wm-message-font-size.user.js",
+      "domain": "Connexus",
+      "description": "Increases the font size of WebMail message bodies for easier reading.",
+      "tags": ["WebMail", "Font Size", "Readability"],
+      "customizations": [
+        { "key": "newFontSize", "label": "Message font size", "type": "text", "hint": "Any CSS size, e.g. 17px or 1.1rem" },
+        { "key": "targetSelector", "label": "Message body selector", "type": "text", "hint": "CSS selector for message body elements" }
+      ]
+    },
+    {
+      "id": "wm-delete-to-folder",
+      "file": "webmail-delete-button-to-folder.user.js",
+      "domain": "Connexus",
+      "description": "Changes the WebMail delete button so messages move to a folder instead of being hard-deleted.",
+      "tags": ["WebMail", "Delete", "Trash"],
+      "customizations": []
+    },
+    {
+      "id": "profile-info",
+      "file": "profile-info-on-wm-logs.user.js",
+      "domain": "Connexus",
+      "description": "Overlays student nickname, photo, Special Pop tags, and RCA House Points on WebMail and Log pages.",
+      "tags": ["WebMail", "Logs", "Student Info", "House Points"],
+      "customizations": [
+        { "key": "CACHE_DURATION_MS", "label": "Profile cache (ms)", "type": "number", "hint": "86400000 = 24 hours" },
+        { "key": "POINTS_CACHE_DURATION_MS", "label": "House-points cache (ms)", "type": "number", "hint": "120000 = 2 minutes" }
+      ]
+    },
+    {
+      "id": "horizontal-log-ui",
+      "file": "horizontal-log-ui.user.js",
+      "domain": "Connexus",
+      "description": "Reflows the Log page boxes into a horizontal row with fixed widths and hidden headers.",
+      "tags": ["Logs", "Layout", "Panels"],
+      "customizations": [
+        { "key": "panelsConfig", "label": "Panel layout config", "type": "json", "hint": "JSON array: id, width, hideHeader per box" }
+      ]
+    },
+    {
+      "id": "webmail-menu",
+      "file": "webmail-menu.user.js",
+      "domain": "Connexus",
+      "description": "Adds shortcut buttons (Log Search, Transcript, STARmail, Assessments) to WebMail context menus.",
+      "tags": ["WebMail", "Menu", "Shortcuts"],
+      "customizations": []
+    },
+    {
+      "id": "highlight-words",
+      "file": "highlight-words.user.js",
+      "domain": "Utilities",
+      "description": "Highlights specific words with colors, pulses names, and adds an explosion effect to science class links.",
+      "tags": ["Highlighting", "Visual", "Text"],
+      "customizations": [
+        { "key": "HIGHLIGHT_RULES", "label": "Highlight rules", "type": "json", "hint": "JSON array of { text, color, textColor?, animation? }" },
+        { "key": "CASE_INSENSITIVE", "label": "Case-insensitive matching", "type": "boolean" }
+      ]
+    },
+    {
+      "id": "auto-grader",
+      "file": "auto-grader.user.js",
+      "domain": "Utilities",
+      "description": "Auto-fills grading score boxes, adds half-score/feedback buttons, and collapses rubric sections.",
+      "tags": ["Gradebook", "Grading", "Automation", "Feedback"],
+      "customizations": [
+        { "key": "SETTLE_MS", "label": "Settle delay (ms)", "type": "number", "hint": "Wait this long with no new score boxes before scrolling" },
+        { "key": "ITEM_FEEDBACK_MESSAGE", "label": "Per-item feedback message", "type": "textarea" },
+        { "key": "OVERALL_PASS_MSG", "label": "Overall pass message", "type": "textarea" },
+        { "key": "OVERALL_FAIL_MSG", "label": "Overall needs-review message", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "webmail-gif-widget",
+      "file": "webmail-gif-widget.user.js",
+      "domain": "Connexus",
+      "description": "Drag-and-drop GIF widget for WebMail with a searchable grid and fixed drop-in height.",
+      "tags": ["WebMail", "GIFs", "Drag & Drop"],
+      "customizations": [
+        { "key": "CONFIG.droppedGifHeight", "label": "Dropped GIF height (px)", "type": "number" },
+        { "key": "CONFIG.gifGridMinItemWidth", "label": "Grid item min width", "type": "text" },
+        { "key": "CONFIG.minWidgetWidth", "label": "Widget min width (px)", "type": "number" },
+        { "key": "CONFIG.minWidgetHeight", "label": "Widget min height (px)", "type": "number" },
+        { "key": "CONFIG.widgetTopOffset", "label": "Widget top offset (px)", "type": "number" },
+        { "key": "CONFIG.widgetBottomMargin", "label": "Widget bottom margin (px)", "type": "number" },
+        { "key": "CONFIG.debounceTime", "label": "Layout debounce (ms)", "type": "number" },
+        { "key": "CONFIG.debug", "label": "Debug logging", "type": "boolean" }
+      ]
+    },
+    {
+      "id": "labster-refresh-claude",
+      "file": "labster-grades-auto-refresh-sort-by-progress-cla.user.js",
+      "domain": "Labster",
+      "description": "Reloads the Labster grades page on an interval and re-sorts students by progress (highest first). Claude variant.",
+      "tags": ["Labster", "Auto-Refresh", "Sorting"],
+      "customizations": [
+        { "key": "REFRESH_SECONDS", "label": "Refresh interval (seconds)", "type": "number" },
+        { "key": "KEY", "label": "On/off storage key", "type": "text", "hint": "localStorage key that remembers the enabled state across reloads" }
+      ]
+    },
+    {
+      "id": "labster-refresh-gemini",
+      "file": "labster-auto-refresh-progress-auto-sort-gemini.user.js",
+      "domain": "Labster",
+      "description": "Auto-refreshes the Labster portal and keeps the student roster sorted by progress. Gemini variant.",
+      "tags": ["Labster", "Auto-Refresh", "Sorting"],
+      "customizations": [
+        { "key": "REFRESH_INTERVAL_SECONDS", "label": "Refresh interval (seconds)", "type": "number" },
+        { "key": "SORT_DIRECTION", "label": "Sort direction", "type": "select", "options": ["descending", "ascending"] }
+      ]
+    }
+  ]
+}
